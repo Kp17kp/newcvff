@@ -1,0 +1,149 @@
+body{
+  width:100%;
+  border-color:powderblue;
+  background-color:#EAFDFC;
+  margin:0;
+
+}
+.mount{
+  position:absolute;
+  top:40%;
+  right:30%;
+}
+.rcloud{
+  position:absolute;
+  right:30%;
+  top:30px;
+}
+.lcloud{
+  position: absolute;
+  top:35%;
+  left:30%;
+}
+h1{
+  color:#66BFBF;
+  text-align: center;
+}
+h2{
+  margin-top:2em;
+  font-weight:normal;
+  text-align: center;
+  color:#66BFBF;
+
+}
+h3{
+  text-align: center;
+   color:#11999E;
+
+}
+p{  text-align: center;
+  color:black;
+}
+.fi{
+  text-align:center;
+}
+.top{
+  border:0;
+  background-color:#EAFDFC;
+  height:650px;
+  width:100%;
+margin:50px auto;
+}
+.mid{
+  margin:50px auto;
+  background-color:#EAFDFC;
+  height:400px;
+  width:100%;
+
+}
+.down{
+  border:0;
+margin:50px auto;
+  display:inline-block;
+  background-color:#EAFDFC;
+  height:400px;
+  width:100%;
+
+  }
+  .photo{
+    position:relative;
+    top:20px;
+    left:40%;
+    height:300px;
+    width:300px;
+    border-radius:200px;
+  }
+  .first{
+    background-color:#EAFDFC;
+
+    width:100%;
+    height:40%;
+
+  }
+  .co{
+position:relative;
+left:40%;
+top:20px;
+    height:300px;
+    width:300px;
+    border-radius:200px;
+  }
+  .dev{
+    position:relative;
+    top:10px;
+    left:40%;
+    margin:auto;
+    width:20%;
+    border-radius:200px;
+  }
+hr{
+  border-style:none;
+border-top-style: dotted;
+border-color:white;
+border-width:10px;
+width:5%;
+
+
+}
+.b{
+  position:relative;
+  left:45%;
+  margin:50px auto;
+}
+.btn {
+
+  background: #34d9d9;
+  background-image: -webkit-linear-gradient(top, #34d9d9, #2b4eb8);
+  background-image: -moz-linear-gradient(top, #34d9d9, #2b4eb8);
+  background-image: -ms-linear-gradient(top, #34d9d9, #2b4eb8);
+  background-image: -o-linear-gradient(top, #34d9d9, #2b4eb8);
+  background-image: linear-gradient(to bottom, #34d9d9, #2b4eb8);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Arial;
+  color: white;
+  font-size: 19px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #13f0d6;
+  text-decoration: none;
+}
+a{
+  color:white;
+  margin:10px 10px;
+  text-decoration:none;
+}
+footer:hover{
+  font-size: 20px;
+}
+footer{
+  text-align: center;
+  padding:70px 0 50px;
+  background-color:#11999E;
+
+}
