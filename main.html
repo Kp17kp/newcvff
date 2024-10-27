@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Pay Payment</title>
+    <script async src="https://pay.google.com/gp/p/js/pay.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        function onGooglePayLoaded() {
+            const paymentsClient = new google.payments.api.PaymentsClient({ environment: 'TEST' });
+            const paymentDataRequest = getGooglePaymentDataRequest();
+            const googlePayButton = paymentsClient.createButton({
+                onClick: () => onGooglePayClicked(paymentsClient, paymentDataRequest)
+            });
+            document.getElementById('container').appendChild(googlePayButton);
+        }
+
+        function getGooglePaymentDataRequest() {
+            return {
+                apiVersion: 2,
+                apiVersionMinor: 0,
+                allowedPaymentMethods: [{
+                    type: 'CARD',
+                    parameters: {
+                        allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                        allowedCardNetworks: ['VISA', 'MASTERCARD']
+                    },
+                    tokenizationSpecification: {
+                        type: 'PAYMENT_GATEWAY',
+                        parameters: {
+                            gateway: 'example',  // Replace with your gateway
+                            gatewayMerchantId: 'exampleGatewayMerchantId'
+                        }
+                    }
+                }],
+                merchantInfo: {
+                    merchantId: '12345678901234567890',  // Replace with your merchant ID
+                    merchantName: 'Example Merchant'
+                },
+                transactionInfo: {
+                    totalPriceStatus: 'FINAL',
+                    totalPrice: '10.00',  // Replace with the actual price
+                    currencyCode: 'USD',
+                    countryCode: 'US'
+                }
+            };
+        }
+
+        function onGooglePayClicked(paymentsClient, paymentDataRequest) {
+            paymentsClient.loadPaymentData(paymentDataRequest)
+                .then(function (paymentData) {
+                    processPayment(paymentData);
+                })
+                .catch(function (err) {
+                    console.error('Payment failed', err);
+                });
+        }
+
+        function processPayment(paymentData) {
+            // Process the payment and verify on your server
+            // If successful, redirect to the next page
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
